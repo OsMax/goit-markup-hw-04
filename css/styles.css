@@ -72,6 +72,7 @@ body{
 
 .header {
     border-bottom: 1px solid var(--border-color);
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 .head-cont{
     display: flex;
@@ -133,6 +134,7 @@ body{
 */
 /* hero */
 .hero{
+    max-width: 1440px;
     text-align: center;
     padding-top: 188px;
     padding-bottom: 188px;
@@ -144,6 +146,7 @@ body{
         url(../images/back/hero-background.jpg);
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
 }
 .hero-title{
     padding: 0;
@@ -253,11 +256,12 @@ body{
     width: calc((100% - (24px * (var(--members-in-line) - 1))) / var(--members-in-line));
     background-color: var(--font-white);
     text-align: center;
+    border-radius: 0px 0px 4px 4px;;
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .member-con{
-    padding: 32px 16px;
+    padding: 32px 0;
     border-radius: 0px 0px 4px 4px;
 }
 
@@ -282,25 +286,30 @@ body{
 }
 .social{
     display: flex;
+    justify-content: center;
     gap: 24px;
 }
 .soc-item{
-    padding: 12px;
+    width: 40px;
+    height: 40px;
+}
+.soc-link{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
     background-color: #4D5AE5;
     border-radius: 50%;
-    color: #F4F4FD;
 }
-.soc-item:hover,
-.soc-item:focus{
-    cursor: pointer;
-    background-color: #404BBF;
+.soc-link:hover,
+.soc-link:focus{
+background-color: #404bbf;
 }
 
 .soc-icon{
     display: block;
-    fill: currentColor;
-    width: 16px;
-    height: 16px;
+    fill: #F4F4FD;
 }
 
 
@@ -309,28 +318,37 @@ body{
 .customers{
     padding: 120px 0;
 }
+
+.customers-title{
+    line-height: 1.1;
+}
 .customers-list{
     display: flex;
     gap: 24px;
     
 }
-.customers-item{
-    display: block;
-    padding: 15px 31px;
-        width: calc((100% - (24px * (var(--customers-in-line) - 1))) / var(--customers-in-line));
-    text-align: center;
-    border: 1px solid #8E8F99;
-    border-radius: 4px;
-    color: #8E8F99;
+.customers-item {
+    height: 88px;
+    width: calc((100% - (24px * (var(--customers-in-line) - 1))) / var(--customers-in-line));
 }
-.customers-item:hover,
-.customers-item:focus {
+
+.customer-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #afb1b8;
+    border: 1px solid #8e8f99;
+    border-radius: 4px;
+}
+.customer-link:hover,
+.customer-link:focus {
     cursor: pointer;
     color: #404BBF;
     border-color: #404BBF;
 }
 .customer-icon{
-    display: block;
     width: 104px;
     height: 56px;
     fill: currentColor;
@@ -400,9 +418,11 @@ body{
 }
 .foot-cont{
     display: flex;
+    align-items: baseline;
+    gap: 120px;
 }
-.logo-cont{
-    margin-right: 120px;
+.soc-cont > .list{
+    gap: 16px;
 }
 .soc-cont{
     color: #ffffff;
@@ -415,10 +435,11 @@ body{
     line-height: 1.5;
     letter-spacing: 0.02em;
 }
-.foot .soc-item:hover,
-.foot .soc-item:focus{
+.foot .foot-soc:hover,
+.foot .foot-soc:focus{
     background-color: #31D0AA;
 }
+
 /**
   |============================
   | PORTFOLIO PAGE
@@ -463,7 +484,13 @@ body{
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
     border: 1px solid transparent;
 }
-
+.app-link{
+    display: block;    
+}
+.app-link:hover,
+.app-link:focus{
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
 .app-cont{
     padding-top: 32px;
     padding-right: 16px;
@@ -497,11 +524,6 @@ body{
     width: calc((100% - (24px * (var(--portfolio-in-line) - 1))) / var(--portfolio-in-line));
 }
 
-.app-list:hover{
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-}
-
-
 
 /**
   |============================
@@ -509,13 +531,12 @@ body{
   |============================
 */
 .qality-cont{
+    display: flex;
+    height: 112px;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 8px;
-    padding: 24px 0;
-    text-align: center;
     background: #F4F4FD;
+    border-radius: 4px;
 }
 
-.qality-icon{
-    width: 64px;
-    height: 64px;
-}
