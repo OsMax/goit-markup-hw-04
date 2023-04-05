@@ -135,10 +135,10 @@ body{
 /* hero */
 .hero{
     max-width: 1440px;
-    text-align: center;
     padding-top: 188px;
     padding-bottom: 188px;
-    
+    margin-left: auto;
+    margin-right: auto;
     background-color: var(--bgc-hero-footer);
     background-image: linear-gradient(
         rgba(46, 47, 66, 0.7),
